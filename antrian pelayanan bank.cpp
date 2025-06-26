@@ -1,9 +1,11 @@
-#include <iostream>
-#include <string>
-using namespace std;
+// Kelas Queue menggunakan linked list
+class AntrianBank {
+private:
+    Node* front;
+    Node* rear;
 
-// Struktur Node untuk nasabah
-struct Node {
-    string nama;
-    Node* next;
-};
+public:
+    // Konstruktor
+    AntrianBank() {
+        front = rear = nullptr;
+    }
