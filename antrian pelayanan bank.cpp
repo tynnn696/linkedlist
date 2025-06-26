@@ -1,15 +1,14 @@
-void dequeue() {
+void tampilkanAntrian() {
         if (front == nullptr) {
-            cout << "Antrian kosong. Tidak ada nasabah yang dilayani.\n";
+            cout << "Antrian kosong.\n";
             return;
         }
 
         Node* temp = front;
-        cout << "Nasabah " << front->nama << " sedang dilayani dan keluar dari antrian.\n";
-        front = front->next;
-
-        if (front == nullptr)
-            rear = nullptr;
-
-        delete temp;
+        cout << "Daftar antrian nasabah:\n";
+        int no = 1;
+        while (temp != nullptr) {
+            cout << no++ << ". " << temp->nama << endl;
+            temp = temp->next;
+        }
     }
