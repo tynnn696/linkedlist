@@ -1,14 +1,15 @@
-void enqueue(string nama) {
-        Node* baru = new Node();
-        baru->nama = nama;
-        baru->next = nullptr;
-
-        if (rear == nullptr) {
-            front = rear = baru;
-        } else {
-            rear->next = baru;
-            rear = baru;
+void dequeue() {
+        if (front == nullptr) {
+            cout << "Antrian kosong. Tidak ada nasabah yang dilayani.\n";
+            return;
         }
 
-        cout << "Nasabah " << nama << " ditambahkan ke antrian.\n";
+        Node* temp = front;
+        cout << "Nasabah " << front->nama << " sedang dilayani dan keluar dari antrian.\n";
+        front = front->next;
+
+        if (front == nullptr)
+            rear = nullptr;
+
+        delete temp;
     }
