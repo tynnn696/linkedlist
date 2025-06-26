@@ -1,11 +1,14 @@
-// Kelas Queue menggunakan linked list
-class AntrianBank {
-private:
-    Node* front;
-    Node* rear;
+void enqueue(string nama) {
+        Node* baru = new Node();
+        baru->nama = nama;
+        baru->next = nullptr;
 
-public:
-    // Konstruktor
-    AntrianBank() {
-        front = rear = nullptr;
+        if (rear == nullptr) {
+            front = rear = baru;
+        } else {
+            rear->next = baru;
+            rear = baru;
+        }
+
+        cout << "Nasabah " << nama << " ditambahkan ke antrian.\n";
     }
